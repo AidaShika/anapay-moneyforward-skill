@@ -1,5 +1,7 @@
 # anapay-moneyforward-skill
 
+日本語 | [English](README.en.md)
+
 ANA Pay の支出を Money Forward ME（Web 版）の手入力口座へ 1 件ずつ自動で入力する Muse スキルです。
 
 Money Forward ME の公式コネクタは読み取り専用のため、手入力口座への書き込みはできません。本スキルは ANA Pay の利用通知メールから再構築した台帳 JSON をもとに、Playwright で Web 版の「手入力」モーダルを操作して入力します。1 件ごとに入力済みでないかを確認し、入力後に一覧の行と残高の減少額で検証するため、二重計上を防げます。
