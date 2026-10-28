@@ -20,6 +20,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Note: some DOM selector ids used by scripts/enter.mjs were informed by the
-anapay2moneyforward project (SBI edition of Money Forward). Verify that
-project's license before redistributing substantial portions of its work.
+Third-party credit: some DOM selector ids referenced by scripts/enter.mjs
+were informed by anapay2moneyforward
+(https://github.com/takanory/anapay2moneyforward), a project for the SBI
+edition of Money Forward, licensed under the MIT License,
+Copyright (c) 2023 Takanori Suzuki. This repository is an independent
+implementation for the standard edition of Money Forward ME and contains
+none of that project's code.

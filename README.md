@@ -33,6 +33,20 @@ ANA Pay 通知メール (payinfo@121.ana.co.jp)
   → 読み取り専用コネクタで残高と明細を照合する
 ```
 
+## Muse スキルとしての導入方法
+
+Muse のカスタムスキルとして使う場合は、このリポジトリをスキルのフォルダへクローンします。
+
+```bash
+git clone https://github.com/AidaShika/mf-anapay-moneyforward-skill ~/workspace/custom-skills/mf_anapay_moneyforward_entry
+cd ~/workspace/custom-skills/mf_anapay_moneyforward_entry
+npm install
+```
+
+その後、Muse で Money Forward ME コネクタと Gmail コネクタを接続し、「ANA Pay の支出を Money Forward に入力して」と頼むだけです。Muse が台帳の作成、分類の確認、入力、照合の順に進めます。本番の入力は利用者が対象の一覧を確認して承認した後にだけ始まります。
+
+スクリプト単体でも使えます。その場合の手順は「初回ログイン」と「日常の使い方」を参照してください。
+
 ## 動作環境
 
 | 項目 | 条件 |
