@@ -1,16 +1,16 @@
 # mf-anapay-moneyforward-skill
 
-ANA Pay の支出を、Money Forward ME（Web 版）の手入力口座へ 1 件ずつ自動で入力する Muse スキルです。
+ANA Pay の支出を Money Forward ME（Web 版）の手入力口座へ 1 件ずつ自動で入力する Muse スキルです。
 
-Money Forward ME の公式コネクタは読み取り専用のため、手入力口座への書き込みはできません。本スキルは、ANA Pay の利用通知メールから再構築した台帳 JSON をもとに、Playwright で Web 版の「手入力」モーダルを操作して入力します。1 件ごとに入力済みでないかを確認し、入力後に一覧の行と残高の減少額で検証するため、二重計上を防げます。
+Money Forward ME の公式コネクタは読み取り専用のため、手入力口座への書き込みはできません。本スキルは ANA Pay の利用通知メールから再構築した台帳 JSON をもとに、Playwright で Web 版の「手入力」モーダルを操作して入力します。1 件ごとに入力済みでないかを確認し、入力後に一覧の行と残高の減少額で検証するため、二重計上を防げます。
 
 > 非公式ツールです。Money Forward の公式 API ではありません。
 > ブラウザ自動化は、サービス側の利用規約やページ仕様の変更の影響を受けます。
 > ご自身のアカウントで、ご自身の責任においてご利用ください。
 
-## なぜ Muse なのか。このスキルの強みはネイティブ連携です
+## なぜ Muse なのか
 
-本スキルは [Muse](https://muse.ai) のスキルとして設計されています。単体のスクリプト集との決定的な違いは、**Muse が Money Forward ME と Gmail の両方に公式コネクタで直接つながっている**ことです。
+このスキルの強みは Muse とのネイティブ連携にあります。本スキルは [Muse](https://muse.ai) のスキルとして設計されています。単体のスクリプト集との決定的な違いは、**Muse が Money Forward ME と Gmail の両方に公式コネクタで直接つながっている**ことです。
 
 | 手順 | 従来の方法 | 本スキル（Muse） |
 |---|---|---|
@@ -55,7 +55,7 @@ npm install
 node scripts/enter.mjs --login
 ```
 
-ブラウザが表示された状態で Money Forward が開きます。普段の方法（MF ID とワンタイムコード、または Apple ログイン）でログインし、家計簿が表示されたらターミナルで Enter キーを押してください。
+ブラウザのウィンドウに Money Forward が表示されます。普段の方法（MF ID とワンタイムコード、または Apple ログイン）でログインし、家計簿が表示されたらターミナルで Enter キーを押してください。
 
 セッションが切れている場合、スクリプトは終了コード 2 で終了します。自動ログインは行いません。
 
@@ -86,19 +86,19 @@ node scripts/enter.mjs --entries ./entries-2026-11.json
 
 ## 個人設定の置き場所
 
-資金移動の除外ルールや、利用先と分類の対応表は人によって異なるため、本リポジトリには含めていません。`examples/config.example.json` と `examples/store_categories.example.json` をコピーして、ご自身の設定ファイルを作成してください。作成した実ファイルは `.gitignore` で除外されています。
+資金移動の除外ルールや、利用先と分類の対応表は人によって異なるため、本リポジトリには含めていません。`examples/config.example.json` と `examples/store_categories.example.json` をコピーして、ご自身の設定ファイルを作成してください。作成した設定ファイルは `.gitignore` で除外されています。
 
 ## ファイル構成
 
-- `SKILL.md` — Muse 向けの手順と安全ルール
-- `skill.yaml` — スキルのメタデータ
-- `scripts/enter.mjs` — 入力スクリプト本体（セレクタは冒頭の CONFIG / SEL に集約）
-- `references/mail-parsing-rules.md` — 通知メールの判別方法と台帳の作り方
-- `references/mf-category-map.md` — Money Forward の分類に実在しない項目と、その代替
-- `references/calibration.md` — ページ仕様変更時の再調整手順
-- `examples/` — 架空データの台帳サンプルと設定テンプレート
-- `tests/` — 純粋関数のユニットテスト（`npm test`）
+- `SKILL.md`：Muse 向けの手順と安全ルール
+- `skill.yaml`：スキルのメタデータ
+- `scripts/enter.mjs`：入力スクリプト本体（セレクタは冒頭の CONFIG / SEL に集約）
+- `references/mail-parsing-rules.md`：通知メールの判別方法と台帳の作り方
+- `references/mf-category-map.md`：Money Forward の分類に実在しない項目と、その代替
+- `references/calibration.md`：ページ仕様変更時の再調整手順
+- `examples/`：架空データの台帳サンプルと設定テンプレート
+- `tests/`：純粋関数のユニットテスト（`npm test`）
 
 ## ライセンス
 
-MIT（`LICENSE` を参照）。一部のセレクタ ID は、同種の先行実装（anapay2moneyforward、SBI 版 Money Forward 向け）を参考にしています。
+MIT（`LICENSE` を参照）。一部のセレクタ ID は同種の先行実装（anapay2moneyforward、SBI 版 Money Forward 向け）を参考にしています。
