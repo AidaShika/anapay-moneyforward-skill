@@ -1,0 +1,5 @@
+name: mf_anapay_moneyforward_entry
+title: ANA Pay to Money Forward Entry
+description: Build a per-transaction ledger from ANA Pay notification emails, confirm each category with the user, then enter the expenses into a Money Forward ME manual wallet with duplicate checks and balance verification.
+category: "Work and knowledge"
+include_in_prompt: false

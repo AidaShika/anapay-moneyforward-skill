@@ -1,0 +1,12 @@
+node_modules/
+.mf-profile/
+.mf-profile-*/
+reports/
+*.log
+.DS_Store
+# The user's own data — never commit these
+config.json
+*ledger*.json
+*entries*.json
+!examples/sample_entries.json
+store_categories.json

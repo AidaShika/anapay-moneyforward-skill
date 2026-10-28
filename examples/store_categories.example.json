@@ -1,0 +1,1 @@
+{"EXAMPLE CONVENIENCE STORE":{"category":"食費","confidence":"high","sub":"その他食費"},"EXAMPLE DEPARTMENT STORE":{"category":"日用品","confidence":"low","note":"Fictional example. A low confidence entry must be confirmed with the user before its transactions can become ready.","sub":"その他日用品"},"EXAMPLE SUPERMARKET":{"category":"食費","confidence":"high","sub":"食料品"}}
