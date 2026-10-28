@@ -1,4 +1,4 @@
-# mf-anapay-moneyforward-skill
+# anapay-moneyforward-skill
 
 ANA Pay の支出を Money Forward ME（Web 版）の手入力口座へ 1 件ずつ自動で入力する Muse スキルです。
 
@@ -38,7 +38,7 @@ ANA Pay 通知メール (payinfo@121.ana.co.jp)
 Muse のカスタムスキルとして使う場合は、このリポジトリをスキルのフォルダへクローンします。
 
 ```bash
-git clone https://github.com/AidaShika/mf-anapay-moneyforward-skill ~/workspace/custom-skills/mf_anapay_moneyforward_entry
+git clone https://github.com/AidaShika/anapay-moneyforward-skill ~/workspace/custom-skills/mf_anapay_moneyforward_entry
 cd ~/workspace/custom-skills/mf_anapay_moneyforward_entry
 npm install
 ```
